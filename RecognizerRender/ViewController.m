@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <Masonry.h>
+#import "RecognizerRenderVC.h"
 
 @interface ViewController ()
 
@@ -16,8 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor=[UIColor whiteColor];
+    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"设置手势密码" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
 }
 
+-(void)buttonClick{
+    RecognizerRenderVC *goVC=[[RecognizerRenderVC alloc]init];
+    [self.navigationController pushViewController:goVC animated:YES];
+}
 
 @end
