@@ -1,5 +1,5 @@
 # RecognizerRender
-### 通过 CGContextRef绘制圆
+### 通过 CGContextRef 绘制圆
 ```
   CGContextRef context = UIGraphicsGetCurrentContext();
   CGContextSetRGBStrokeColor(context, 241/255.0, 241/255.0, 241/255.0, self.strokeColorAlpha);
@@ -30,7 +30,7 @@ for(AreaRect* area in self.circleAreaArray)
     }
 ```
 ### 经过圆就调用画圆的方法通过CGContextSetRGBStrokeColor和CGContextAddArc这个两个方法画出选择之后的圆
-### 连线的过程中要在touchesMoved方法中调用划直线的方法CGContextMoveToPoint(context, start.x, start.y);CGContextAddLineToPoint(context, end.x, end.y);
+### 连线的过程中要在touchesMoved方法中调用划直线的方法：CGContextMoveToPoint(context, start.x, start.y);CGContextAddLineToPoint(context, end.x, end.y);
 
 ### 调用的方法
 ```
